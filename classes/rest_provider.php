@@ -9,10 +9,7 @@
      */
      public function getRoutes()
      {
-            return array( 'foo'     => new ezpRestVersionedRoute( new  ezcMvcRailsRoute( '/foo', 'ezxRestController', 'foo' ), 1 ),
-                          'foobar'  => new ezpRestVersionedRoute( new  ezcMvcRailsRoute( '/foo', 'ezxRestController', 'fooBar' ), 2 ),
-						  
-                          'ezpNode'=> new ezpRestVersionedRoute( new ezpMvcRailsRoute( '/content/node/:nodeId', 'sqliCostumRestContentController', 'viewContent' ), 1 ),
+            return array( 'ezpNode'=> new ezpRestVersionedRoute( new ezpMvcRailsRoute( '/content/node/:nodeId', 'sqliCostumRestContentController', 'viewContent' ), 1 ),
                           'ezpList' => new ezpRestVersionedRoute( new ezpMvcRegexpRoute( '@^/content/node/(?P<nodeId>\d+)/list(?:/offset/(?P<offset>\d+))?(?:/limit/(?P<limit>\d+))?(?:/class/(?P<class>\w+))?(?:/sort/(?P<sortKey>\w+)(?:/(?P<sortType>asc|desc))?)?$@', 'sqliCostumRestContentController', 'list' ), 1 )
             
             );
